@@ -1,0 +1,60 @@
+{
+  "name": "libpython",
+  "version": "3.11.16",
+  "build": "h0c77377_2_cpython",
+  "build_number": 2,
+  "channel": "https://conda.anaconda.org/conda-forge/linux-64",
+  "subdir": "linux-64",
+  "fn": "libpython-3.11.16-h0c77377_2_cpython.conda",
+  "md5": "55c7bd7fa76a498266addcddf2356647",
+  "url": "https://conda.anaconda.org/conda-forge/linux-64/libpython-3.11.16-h0c77377_2_cpython.conda",
+  "sha256": "9c945fbdc2292a8a39e412cb99672722c60ddf38b9002a52d5bd5954a0b25844",
+  "depends": [
+    "__glibc >=2.17,<3.0.a0",
+    "libgcc >=15",
+    "libstdcxx >=15"
+  ],
+  "constrains": [],
+  "license": "Python-2.0",
+  "timestamp": 1788393477692,
+  "size": 7831580,
+  "_requested_specs": [],
+  "package_tarball_full_path": "/opt/conda/pkgs/libpython-3.11.16-h0c77377_2_cpython.conda",
+  "extracted_package_dir": "/opt/conda/pkgs/libpython-3.11.16-h0c77377_2_cpython",
+  "files": [
+    "lib/libpython3.11.so",
+    "lib/libpython3.11.so.1.0",
+    "lib/libpython3.so"
+  ],
+  "paths_data": {
+    "paths_version": 1,
+    "paths": [
+      {
+        "_path": "lib/libpython3.11.so",
+        "path_type": "softlink",
+        "sha256": "2b8e88ab425641109eae671f55b057cf3fe2254dd371b8782defd2b26acc5e3e",
+        "size_in_bytes": 25855240
+      },
+      {
+        "_path": "lib/libpython3.11.so.1.0",
+        "prefix_placeholder": "/home/conda/feedstock_root/build_artifacts/python-split_1788391675171/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehol",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "sha256": "2b8e88ab425641109eae671f55b057cf3fe2254dd371b8782defd2b26acc5e3e",
+        "size_in_bytes": 25855240,
+        "sha256_in_prefix": "c7ddad73d916a584b997d2813cc5c9ff735882c1bddb2a6d6041578fa45c59f3"
+      },
+      {
+        "_path": "lib/libpython3.so",
+        "path_type": "hardlink",
+        "sha256": "084950fc7fa4cca92224afd58aa3d05ebf2513097e8cd7b15953dc2112b837ba",
+        "size_in_bytes": 14920,
+        "sha256_in_prefix": "084950fc7fa4cca92224afd58aa3d05ebf2513097e8cd7b15953dc2112b837ba"
+      }
+    ]
+  },
+  "link": {
+    "source": "/opt/conda/pkgs/libpython-3.11.16-h0c77377_2_cpython",
+    "type": 1
+  }
+}

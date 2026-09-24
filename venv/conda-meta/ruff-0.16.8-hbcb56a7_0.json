@@ -1,0 +1,156 @@
+{
+  "name": "ruff",
+  "version": "0.16.8",
+  "build": "hbcb56a7_0",
+  "build_number": 0,
+  "channel": "https://conda.anaconda.org/conda-forge/linux-64",
+  "subdir": "linux-64",
+  "fn": "ruff-0.16.8-hbcb56a7_0.conda",
+  "md5": "28965a99046cf3514ce2f0c246e90334",
+  "url": "https://conda.anaconda.org/conda-forge/linux-64/ruff-0.16.8-hbcb56a7_0.conda",
+  "sha256": "e476cedb233fe5805258690ca99b951291501706bfa9235f1c20d73170d2ff3d",
+  "depends": [
+    "python",
+    "__glibc >=2.17,<3.0.a0",
+    "libgcc >=15"
+  ],
+  "constrains": [
+    "__glibc >=2.17"
+  ],
+  "noarch": "python",
+  "license": "MIT",
+  "package_type": "noarch_python",
+  "timestamp": 1790136753263,
+  "size": 8933128,
+  "requested_spec": "ruff[version='>=0.6,<1']",
+  "package_tarball_full_path": "/opt/conda/pkgs/ruff-0.16.8-hbcb56a7_0.conda",
+  "extracted_package_dir": "/opt/conda/pkgs/ruff-0.16.8-hbcb56a7_0",
+  "files": [
+    "bin/ruff",
+    "lib/python3.11/site-packages/ruff/__init__.py",
+    "lib/python3.11/site-packages/ruff/__main__.py",
+    "lib/python3.11/site-packages/ruff/_find_ruff.py",
+    "lib/python3.11/site-packages/ruff-0.16.8.dist-info/INSTALLER",
+    "lib/python3.11/site-packages/ruff-0.16.8.dist-info/METADATA",
+    "lib/python3.11/site-packages/ruff-0.16.8.dist-info/RECORD",
+    "lib/python3.11/site-packages/ruff-0.16.8.dist-info/REQUESTED",
+    "lib/python3.11/site-packages/ruff-0.16.8.dist-info/WHEEL",
+    "lib/python3.11/site-packages/ruff-0.16.8.dist-info/direct_url.json",
+    "lib/python3.11/site-packages/ruff-0.16.8.dist-info/licenses/LICENSE",
+    "lib/python3.11/site-packages/ruff-0.16.8.dist-info/sboms/ruff.cyclonedx.json",
+    "lib/python3.11/site-packages/ruff/__pycache__/__init__.cpython-311.pyc",
+    "lib/python3.11/site-packages/ruff/__pycache__/__main__.cpython-311.pyc",
+    "lib/python3.11/site-packages/ruff/__pycache__/_find_ruff.cpython-311.pyc"
+  ],
+  "paths_data": {
+    "paths_version": 1,
+    "paths": [
+      {
+        "_path": "python-scripts/ruff",
+        "path_type": "hardlink",
+        "sha256": "7212f24a191a219d1c9058e4db81cf92e282193e99f163e452258a947a97679b",
+        "size_in_bytes": 25271272,
+        "sha256_in_prefix": "7212f24a191a219d1c9058e4db81cf92e282193e99f163e452258a947a97679b"
+      },
+      {
+        "_path": "site-packages/ruff/__init__.py",
+        "path_type": "hardlink",
+        "sha256": "eba8a7f720d20a26214448eec4b4af01cfe0e717f6a773d870401e06cc10842d",
+        "size_in_bytes": 103,
+        "sha256_in_prefix": "eba8a7f720d20a26214448eec4b4af01cfe0e717f6a773d870401e06cc10842d"
+      },
+      {
+        "_path": "site-packages/ruff/__main__.py",
+        "path_type": "hardlink",
+        "sha256": "f28dfadbcc89b3715a2a732335f3e695b5b1609708d79e4b3a9ac2f80e55774d",
+        "size_in_bytes": 547,
+        "sha256_in_prefix": "f28dfadbcc89b3715a2a732335f3e695b5b1609708d79e4b3a9ac2f80e55774d"
+      },
+      {
+        "_path": "site-packages/ruff/_find_ruff.py",
+        "path_type": "hardlink",
+        "sha256": "24dc682895e4aa24a4995ad3089fecbf83a5d12c0c05ca3311edd6ebb6dbd22a",
+        "size_in_bytes": 3250,
+        "sha256_in_prefix": "24dc682895e4aa24a4995ad3089fecbf83a5d12c0c05ca3311edd6ebb6dbd22a"
+      },
+      {
+        "_path": "site-packages/ruff-0.16.8.dist-info/INSTALLER",
+        "path_type": "hardlink",
+        "sha256": "bc33022edcb7639ff53355b4e91dade50a0bbf0299efeb6171d1ec0ba5029cfc",
+        "size_in_bytes": 6,
+        "sha256_in_prefix": "bc33022edcb7639ff53355b4e91dade50a0bbf0299efeb6171d1ec0ba5029cfc"
+      },
+      {
+        "_path": "site-packages/ruff-0.16.8.dist-info/METADATA",
+        "path_type": "hardlink",
+        "sha256": "8b2008567400243a148323f64b1d29839e54288132e39337f2002f3f0bc466db",
+        "size_in_bytes": 20755,
+        "sha256_in_prefix": "8b2008567400243a148323f64b1d29839e54288132e39337f2002f3f0bc466db"
+      },
+      {
+        "_path": "site-packages/ruff-0.16.8.dist-info/RECORD",
+        "path_type": "hardlink",
+        "sha256": "07de0deebeadabe0147bbd291fb33b5a3592fb5eb1f1dff284bd5f15db43c5a4",
+        "size_in_bytes": 1112,
+        "sha256_in_prefix": "07de0deebeadabe0147bbd291fb33b5a3592fb5eb1f1dff284bd5f15db43c5a4"
+      },
+      {
+        "_path": "site-packages/ruff-0.16.8.dist-info/REQUESTED",
+        "path_type": "hardlink",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size_in_bytes": 0,
+        "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "_path": "site-packages/ruff-0.16.8.dist-info/WHEEL",
+        "path_type": "hardlink",
+        "sha256": "7bab97c93ffb84a10e2a685a1d7579f6a4b11bdf536383824ea810813703441a",
+        "size_in_bytes": 97,
+        "sha256_in_prefix": "7bab97c93ffb84a10e2a685a1d7579f6a4b11bdf536383824ea810813703441a"
+      },
+      {
+        "_path": "site-packages/ruff-0.16.8.dist-info/direct_url.json",
+        "path_type": "hardlink",
+        "sha256": "cee77d6dc3a59a70028646127b291bee9aac87171e57fdbaa004ed81885e22dc",
+        "size_in_bytes": 115,
+        "sha256_in_prefix": "cee77d6dc3a59a70028646127b291bee9aac87171e57fdbaa004ed81885e22dc"
+      },
+      {
+        "_path": "site-packages/ruff-0.16.8.dist-info/licenses/LICENSE",
+        "path_type": "hardlink",
+        "sha256": "2597d854122b77ddc71971564ca2350a37608575ce324adc5650a2b2051c8f18",
+        "size_in_bytes": 20731,
+        "sha256_in_prefix": "2597d854122b77ddc71971564ca2350a37608575ce324adc5650a2b2051c8f18"
+      },
+      {
+        "_path": "site-packages/ruff-0.16.8.dist-info/sboms/ruff.cyclonedx.json",
+        "path_type": "hardlink",
+        "sha256": "6e75ed866217282a712f48632042a7156ad557192a4b1c57c1f1793669fe576d",
+        "size_in_bytes": 414432,
+        "sha256_in_prefix": "6e75ed866217282a712f48632042a7156ad557192a4b1c57c1f1793669fe576d"
+      },
+      {
+        "_path": "lib/python3.11/site-packages/ruff/__pycache__/__init__.cpython-311.pyc",
+        "path_type": "pyc_file",
+        "size_in_bytes": 309
+      },
+      {
+        "_path": "lib/python3.11/site-packages/ruff/__pycache__/__main__.cpython-311.pyc",
+        "path_type": "pyc_file",
+        "size_in_bytes": 1276
+      },
+      {
+        "_path": "lib/python3.11/site-packages/ruff/__pycache__/_find_ruff.cpython-311.pyc",
+        "path_type": "pyc_file",
+        "size_in_bytes": 5091
+      }
+    ]
+  },
+  "link": {
+    "source": "/opt/conda/pkgs/ruff-0.16.8-hbcb56a7_0",
+    "type": 1
+  },
+  "requested_specs": [
+    "ruff[version='>=0.6,<1']"
+  ]
+}

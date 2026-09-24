@@ -1,0 +1,11 @@
+prefix=/workspaces/formative1-part2/venv
+exec_prefix=/workspaces/formative1-part2/venv
+libdir=/workspaces/formative1-part2/venv/lib
+includedir=/workspaces/formative1-part2/venv/include
+
+Name: uuid
+Description: Universally unique id library
+Version: 2.42.4
+Cflags: -I${includedir}/uuid
+Libs.private:  -lpthread
+Libs: -L${libdir} -luuid
