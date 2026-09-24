@@ -18,9 +18,11 @@ class Sigmoid(Module):
             np.ndarray: sigmoid(x), elementwise, same shape as x.
 
         Sets:
-            self.a (np.ndarray): the output, saved so backward
-                can reuse it via a(1 - a) instead of recomputing
-                the exponential.
+            self.a (np.ndarray): a private copy of the output,
+                saved so backward can reuse it via a(1 - a) instead
+                of recomputing the exponential. It is a copy, not
+                the returned array, so a caller who modifies the
+                returned values in place cannot corrupt the cache.
         """
         # np.exp(-x) overflows for very negative-of-negative x (i.e. large
         # positive x) and np.exp(x) overflows for very negative x. Route
@@ -28,8 +30,9 @@ class Sigmoid(Module):
         # a non-positive number, so no branch can overflow.
         positive = x >= 0
         exp_term = np.exp(np.where(positive, -x, x))
-        self.a = np.where(positive, 1.0 / (1.0 + exp_term), exp_term / (1.0 + exp_term))
-        return self.a
+        a = np.where(positive, 1.0 / (1.0 + exp_term), exp_term / (1.0 + exp_term))
+        self.a = a.copy()
+        return a
 
     def backward(self, grad_output: np.ndarray) -> np.ndarray:
         """Compute gradients given the upstream gradient.

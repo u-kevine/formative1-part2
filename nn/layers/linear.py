@@ -52,10 +52,13 @@ class Linear(Module):
             np.ndarray: output, shape (batch_size, out_features).
 
         Sets:
-            self.x (np.ndarray): the input, saved unchanged so
-                backward can use it.
+            self.x (np.ndarray): a private copy of the input, saved
+                so backward can use it. It is a copy, not a
+                reference, so a caller who modifies x in place after
+                forward cannot silently corrupt dW. The price is one
+                extra pass over x per forward call.
         """
-        self.x = x
+        self.x = np.copy(x)
         return x @ self.W + self.b
 
     def backward(self, grad_output: np.ndarray) -> np.ndarray:

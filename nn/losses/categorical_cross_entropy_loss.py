@@ -27,11 +27,12 @@ class CategoricalCrossEntropyLoss:
         Sets:
             self.predictions (np.ndarray): the clipped predictions,
                 reused by backward.
-            self.targets (np.ndarray): the targets, reused by
-                backward.
+            self.targets (np.ndarray): a private copy of the
+                targets, reused by backward, so later in-place edits
+                by the caller cannot change the gradient.
         """
         self.predictions = np.clip(predictions, _EPS, 1.0 - _EPS)
-        self.targets = targets
+        self.targets = np.copy(targets)
         m = self.predictions.shape[0]
         loss = -np.sum(self.targets * np.log(self.predictions)) / m
         return float(loss)

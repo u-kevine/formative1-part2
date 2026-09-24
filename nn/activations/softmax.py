@@ -24,36 +24,44 @@ class Softmax(Module):
                 Each row sums to 1.
 
         Sets:
-            self.a (np.ndarray): the output probabilities, saved
-                so backward can reuse them when building the
-                per-row Jacobian.
+            self.a (np.ndarray): a private copy of the output
+                probabilities, saved so backward can reuse them.
+                It is a copy, not the returned array, so a caller
+                who modifies the returned probabilities in place
+                cannot corrupt the cache backward depends on.
         """
         shifted = x - np.max(x, axis=1, keepdims=True)
         exp = np.exp(shifted)
-        self.a = exp / np.sum(exp, axis=1, keepdims=True)
-        return self.a
+        a = exp / np.sum(exp, axis=1, keepdims=True)
+        self.a = a.copy()
+        return a
 
     def backward(self, grad_output: np.ndarray) -> np.ndarray:
         """Compute gradients given the upstream gradient.
 
-        Uses the per-example Jacobian
-        d a_c / d z_k = a_c * (delta_ck - a_k), applied one row
-        at a time.
+        For one example, the softmax Jacobian is
+        d a_c / d z_k = a_c * (delta_ck - a_k), i.e.
+        J = diag(a) - a a^T, which is symmetric. Applying it to the
+        upstream gradient g gives
+
+            dL/dz_k = a_k * (g_k - sum_c g_c * a_c),
+
+        so the whole batch needs only one row-wise reduction (the
+        sum over c) and elementwise arithmetic -- no explicit
+        (C, C) Jacobian and no Python loop over examples.
 
         Args:
             grad_output (np.ndarray): gradient of the loss with
                 respect to this layer's output, shape
-                (batch_size, C).
+                (batch_size, C). Any numeric dtype, including
+                integer arrays.
 
         Returns:
             np.ndarray: gradient of the loss with respect to
                 this layer's input (the logits), shape
-                (batch_size, C).
+                (batch_size, C). Always floating point: its dtype
+                comes from the saved probabilities, never from
+                grad_output.
         """
-        batch_size, num_classes = self.a.shape
-        grad_input = np.empty_like(grad_output)
-        for i in range(batch_size):
-            a_i = self.a[i].reshape(-1, 1)  # (C, 1)
-            jacobian = np.diagflat(a_i) - a_i @ a_i.T  # (C, C)
-            grad_input[i] = jacobian @ grad_output[i]
-        return grad_input
+        weighted = np.sum(grad_output * self.a, axis=1, keepdims=True)
+        return self.a * (grad_output - weighted)
